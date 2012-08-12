@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div id="sidemenu">
+    <nav>
+        @Html.ActionLink("Add URL", "AddUrl") <br>
+    </nav>
+</div>
+
+<div id="content">
+    @RenderBody()
+</div>

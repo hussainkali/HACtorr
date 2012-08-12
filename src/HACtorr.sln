@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-# SharpDevelop 4.2.1.8805
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HACtorr", "HACtorr\HACtorr.csproj", "{30A5DE30-1E1D-4E70-888D-43AF864E7AE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HACtorr.Framework", "HACtorr.Framework\HACtorr.Framework.csproj", "{EC1ABB4A-D1C4-4475-AEF9-E018BE748A4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{407AA832-1418-4204-BC70-E21C562228D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HACtorr.Framework.Tests", "HACtorr.Framework.Tests\HACtorr.Framework.Tests.csproj", "{D2162E40-2BD1-463F-A4E9-C52AF2AAA431}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HACtorr.Tests", "HACtorr.Tests\HACtorr.Tests.csproj", "{722A655B-70C0-4384-8F44-813E8CC8D1AC}"
 EndProject
@@ -12,13 +17,32 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{30A5DE30-1E1D-4E70-888D-43AF864E7AE0}.Debug|x86.Build.0 = Debug|x86
 		{30A5DE30-1E1D-4E70-888D-43AF864E7AE0}.Debug|x86.ActiveCfg = Debug|x86
-		{30A5DE30-1E1D-4E70-888D-43AF864E7AE0}.Release|x86.Build.0 = Release|x86
+		{30A5DE30-1E1D-4E70-888D-43AF864E7AE0}.Debug|x86.Build.0 = Debug|x86
 		{30A5DE30-1E1D-4E70-888D-43AF864E7AE0}.Release|x86.ActiveCfg = Release|x86
-		{722A655B-70C0-4384-8F44-813E8CC8D1AC}.Debug|x86.Build.0 = Debug|x86
+		{30A5DE30-1E1D-4E70-888D-43AF864E7AE0}.Release|x86.Build.0 = Release|x86
 		{722A655B-70C0-4384-8F44-813E8CC8D1AC}.Debug|x86.ActiveCfg = Debug|x86
-		{722A655B-70C0-4384-8F44-813E8CC8D1AC}.Release|x86.Build.0 = Release|x86
+		{722A655B-70C0-4384-8F44-813E8CC8D1AC}.Debug|x86.Build.0 = Debug|x86
 		{722A655B-70C0-4384-8F44-813E8CC8D1AC}.Release|x86.ActiveCfg = Release|x86
+		{722A655B-70C0-4384-8F44-813E8CC8D1AC}.Release|x86.Build.0 = Release|x86
+		{D2162E40-2BD1-463F-A4E9-C52AF2AAA431}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D2162E40-2BD1-463F-A4E9-C52AF2AAA431}.Debug|x86.Build.0 = Debug|Any CPU
+		{D2162E40-2BD1-463F-A4E9-C52AF2AAA431}.Release|x86.ActiveCfg = Release|Any CPU
+		{D2162E40-2BD1-463F-A4E9-C52AF2AAA431}.Release|x86.Build.0 = Release|Any CPU
+		{EC1ABB4A-D1C4-4475-AEF9-E018BE748A4A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC1ABB4A-D1C4-4475-AEF9-E018BE748A4A}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC1ABB4A-D1C4-4475-AEF9-E018BE748A4A}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC1ABB4A-D1C4-4475-AEF9-E018BE748A4A}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2162E40-2BD1-463F-A4E9-C52AF2AAA431} = {407AA832-1418-4204-BC70-E21C562228D2}
+		{722A655B-70C0-4384-8F44-813E8CC8D1AC} = {407AA832-1418-4204-BC70-E21C562228D2}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = HACtorr\HACtorr.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$1.ResourceNamePolicy = FileFormatDefault
 	EndGlobalSection
 EndGlobal

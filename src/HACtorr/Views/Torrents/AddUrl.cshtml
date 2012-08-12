@@ -1,0 +1,20 @@
+﻿@model HACtorr.ViewModels.Torrents.AddUrlViewModel
+@{
+	ViewBag.Title = "Add Url";
+	Layout = "~/Views/Shared/_TorrentsLayout.cshtml";
+}
+
+<h2>Add Url</h2>
+
+<div id="content">
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(vm => vm.TorrentUrl)
+        @Html.EditorFor(vm => vm.TorrentUrl)
+        @Html.ValidationMessageFor(vm => vm.TorrentUrl)
+        
+        <p>
+            <input type="submit" value="Add Torrent"/>
+        </p>
+    }
+</div>

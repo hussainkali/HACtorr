@@ -6,12 +6,17 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
 
 namespace HACtorr
 {
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+
+    using Castle.MicroKernel;
+    using Castle.Windsor;
+    using Castle.Windsor.Installer;
+
 	public class MvcApplication : HttpApplication
 	{
 		public static void RegisterRoutes(RouteCollection routes)
@@ -30,7 +35,17 @@ namespace HACtorr
 		
 		protected void Application_Start()
 		{
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(GetWindsorKernel()));
 			RegisterRoutes(RouteTable.Routes);
 		}
+
+        private IKernel GetWindsorKernel()
+        {
+            WindsorContainer container = new WindsorContainer();
+
+            container.Install(FromAssembly.InThisApplication());
+
+            return container.Kernel;
+        }
 	}
 }

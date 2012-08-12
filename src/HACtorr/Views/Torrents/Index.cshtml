@@ -1,0 +1,27 @@
+﻿@model HACtorr.ViewModels.Torrents.TorrentsViewModel
+@{
+	ViewBag.Title = "Torrents";
+	Layout = "~/Views/Shared/_TorrentsLayout.cshtml";
+}
+
+<h2>Torrents</h2>
+
+<div id="content">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>State</th>
+            <th>Seeds</th>
+            <th>Leeches</th>
+        </tr>
+    @foreach (var torrent in Model.Torrents)
+    {
+        <tr>
+            <td>@Html.DisplayFor(i => torrent.Name)</td>
+            <td>@Html.DisplayFor(i => torrent.TorrentManager.State)</td>
+            <td>@Html.DisplayFor(i => torrent.TorrentManager.Peers.Seeds)</td>
+            <td>@Html.DisplayFor(i => torrent.TorrentManager.Peers.Leechs)</td>
+        </tr>
+    }
+    </table>
+</div>
