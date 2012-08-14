@@ -6,6 +6,7 @@ namespace HACtorr.Framework.Torrents
     {
         IEnumerable<TorrentInfo> GetTorrents();
         void AddTorrent(string torrentUrl);
+        void AddTorrents(IEnumerable<IFileContainer> streams);
     }
 }
 

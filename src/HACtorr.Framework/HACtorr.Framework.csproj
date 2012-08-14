@@ -47,6 +47,7 @@
     <Compile Include="Torrents\TorrentInfo.cs" />
     <Compile Include="Torrents\TorrentService.cs" />
     <Compile Include="Torrents\ITorrentService.cs" />
+    <Compile Include="IFileContainer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

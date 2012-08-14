@@ -9,12 +9,18 @@
 <div id="content">
     @using (Html.BeginForm())
     {
-        @Html.LabelFor(vm => vm.TorrentUrl)
+        <label>Add from URL</label>
         @Html.EditorFor(vm => vm.TorrentUrl)
         @Html.ValidationMessageFor(vm => vm.TorrentUrl)
         
-        <p>
-            <input type="submit" value="Add Torrent"/>
-        </p>
+        <input type="submit" value="Add Torrent"/>
+    }
+    
+    @using (Html.BeginForm("AddTorrents", "Torrents", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <label>Add from .torrent file</label>
+        <input type="file" multiple="true" name="files"/>
+        
+        <input type="submit" value="Add Torrent File"/>
     }
 </div>

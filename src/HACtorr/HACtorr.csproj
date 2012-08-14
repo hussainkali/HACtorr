@@ -83,6 +83,7 @@
     <Compile Include="Controllers\TorrentsController.cs" />
     <Compile Include="ViewModels\Torrents\TorrentsViewModel.cs" />
     <Compile Include="ViewModels\Torrents\AddUrlViewModel.cs" />
+    <Compile Include="Utility\HttpPostedFileBaseFileContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\Site.css" />
@@ -129,6 +130,7 @@
     <Folder Include="Views\Torrents\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Torrents\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HACtorr.Framework\HACtorr.Framework.csproj">

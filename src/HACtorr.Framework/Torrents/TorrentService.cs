@@ -12,6 +12,13 @@ namespace HACtorr.Framework.Torrents
     public class TorrentService : ITorrentService
     {
         private readonly ClientEngine engine = new ClientEngine(new EngineSettings());
+        private readonly string downloadsDirectory;
+
+        public TorrentService()
+        {
+            var userDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            this.downloadsDirectory = Path.Combine(userDirectory, "Downloads");
+        }
 
         public IEnumerable<TorrentInfo> GetTorrents()
         {
@@ -22,8 +29,6 @@ namespace HACtorr.Framework.Torrents
         {
             // TODO: This temp file stuff is a bit dodgy, but we can leave it until we start to sort out making the settings configurable
             var tempFile = Path.GetTempFileName();
-            var userDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var downloadsDirectory = Path.Combine(userDirectory, "Downloads");
 
             using (WebClient client = new WebClient())
             {
@@ -35,6 +40,18 @@ namespace HACtorr.Framework.Torrents
             engine.Register(manager);
 
             manager.Start();
+        }
+
+        public void AddTorrents(IEnumerable<IFileContainer> files)
+        {
+            foreach (var file in files)
+            {
+                var torrent = Torrent.Load(file.Content);
+                var manager = new TorrentManager(torrent, downloadsDirectory, new TorrentSettings());
+                this.engine.Register(manager);
+
+                manager.Start();
+            }
         }
     }
 }
